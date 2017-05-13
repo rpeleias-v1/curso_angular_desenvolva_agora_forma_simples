@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Cadastro de vinho</h2>
+  <form>
+    <div class="form-group">
+      <label for="vinho">Nome</label>
+      <input type="text" class="form-control" id="nome" name="vinho" maxlength="50" required>
+    </div>
+    <div class="form-group">
+      <label for="uva">Uva</label>
+      <select name="uva" id="uva" class="form-control" name="uva" required></select>
+    </div>
+    <div class="form-group">
+      <label for="classificacao">Classificação</label>
+      <select name="classificacao" id="classificacao" class="form-control" name="classificacao" required></select>
+    </div>
+    <div class="form-group">
+      <label for="anoSafra">Ano de Safra</label>
+      <input type="number" class="form-control" id="anoSafra" name="anoSafra" min="1950" max="2017" required>
+    </div>
+    <div class="form-group">
+      <label for="fabricante">Fabricante</label>
+      <input type="text" class="form-control" name="fabricante" id="fabricante" maxlength="50" required>
+    </div>
+    <div class="form-group">
+      <label for="paisOrigem">País de Origem</label>
+      <input type="text" class="form-control" fabricante="paisOrigem" id="paisOrigem" maxlength="50" required>
+    </div>
+    <div class="form-group" role="group">      
+      <button type="submit" class="btn btn-primary" >Salvar</button>
+      <button type="button" class="btn btn-warning" >Voltar</button>
+    </div>
+  </form>
+</div>
