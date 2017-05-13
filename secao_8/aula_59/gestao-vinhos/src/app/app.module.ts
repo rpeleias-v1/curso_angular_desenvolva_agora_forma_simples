@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppRoutingModule } from './app-routing/app-routing.module';
-
 import { AppComponent } from './app.component';
 import { VinhosComponent } from './components/vinhos/vinhos.component';
 import { VinhosService } from './services/vinhos.service';
@@ -23,8 +21,7 @@ import { CadastroVinhoComponent } from './components/cadastro-vinho/cadastro-vin
     BrowserModule,
     FormsModule,
     HttpModule  ,
-    InMemoryWebApiModule.forRoot(VinhoApi) ,
-    AppRoutingModule 
+    InMemoryWebApiModule.forRoot(VinhoApi)  
   ],
   providers: [VinhosService],
   bootstrap: [AppComponent]
