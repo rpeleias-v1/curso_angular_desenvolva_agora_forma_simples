@@ -4,22 +4,28 @@ import { Vinho } from './../models/vinho';
 
 import { Http } from '@angular/http';
 
-import 'rxjs/add/operator/toPromise';
-
 @Injectable()
 export class VinhosService {
 
-  constructor(private http: Http) { }
+  constructor() { }
 
-  listar(): Promise<Array<Vinho>> {
-    return this.http.get('api/vinhos')
-      .toPromise()
-      .then(response => response.json().data as Array<Vinho>)
-      .catch(this.tratarErro);
+  listar(): Array<Vinho> {
+    let vinhos = new Array<Vinho>();
+    vinhos.push(this.criarVinho(1, 'Casillero Del Diablo', 'Cabernet Sauvignon', 'Tinto', 'Concha y Toro', 2010, 'Chile'));
+    vinhos.push(this.criarVinho(2, 'Casillero Del Diablo', 'Merlot', 'Tinto', 'Concha y Toro', 2015, 'Chile'));
+    return vinhos;
   }
 
-  private tratarErro(erro:any): Promise<any> {
-    console.log(erro);
-    return Promise.reject(erro.message | erro);
-  }
+  private criarVinho(id: number, nome: string, uva: string, classificacao: string, fabricante: string, anoSafra:number, paisOrigem: string): Vinho {
+    let vinho:Vinho = new Vinho();
+    vinho.id = id;
+    vinho.nome = nome;
+    vinho.uva = uva;
+    vinho.classificacao = classificacao;
+    vinho.fabricante = fabricante;
+    vinho.anoSafra = anoSafra;
+    vinho.paisOrigem = paisOrigem;
+    return vinho;
+}
+
 }

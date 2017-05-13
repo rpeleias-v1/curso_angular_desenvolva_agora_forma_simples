@@ -9,13 +9,11 @@ import { VinhosService } from './services/vinhos.service';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { VinhoApi } from './vinho-api';
-import { CadastroVinhoComponent } from './components/cadastro-vinho/cadastro-vinho.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VinhosComponent,
-    CadastroVinhoComponent    
+    VinhosComponent    
   ],
   imports: [
     BrowserModule,
