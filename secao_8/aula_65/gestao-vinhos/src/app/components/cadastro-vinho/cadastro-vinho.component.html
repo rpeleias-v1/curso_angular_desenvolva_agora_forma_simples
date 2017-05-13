@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>Cadastro de vinho</h2>
+  <form (ngSubmit)="salvar()">
+    <div class="form-group">
+      <label for="vinho">Nome</label>
+      <input type="text" [(ngModel)]="vinho.nome" class="form-control" id="nome" name="vinho" maxlength="50" required #nome="ngModel" >  
+
+      <div [hidden]="nome.valid || nome.pristine" class="alert alert-danger">
+          Nome do vinho é um campo obrigatório
+      </div>          
+    </div>
+    <div class="form-group">
+      <label for="uva">Uva</label>
+      <select name="uva" id="uva" class="form-control" name="uva" required [(ngModel)]="vinho.uva">
+        <option *ngFor="let uva of uvas" [value]= "uva">
+          {{uva}}
+        </option>
+      </select>      
+    </div>
+    <div class="form-group">
+      <label for="classificacao">Classificação</label>
+      <select name="classificacao" id="classificacao" class="form-control" name="classificacao" [(ngModel)]="vinho.classificacao" required>
+          <option *ngFor="let classificao of classificacoes" [value]= "classificacao">
+          {{classificao}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="anoSafra">Ano de Safra</label>
+      <input type="number" [(ngModel)]="vinho.anoSafra" class="form-control" id="anoSafra" name="anoSafra" min="1950" max="2017" required #anoSafra="ngModel">
+      <div [hidden]="anoSafra.valid || anoSafra.pristine" class="alert alert-danger">
+          Ano de safra do vinho é um campo obrigatório
+      </div>  
+    </div>
+    <div class="form-group">
+      <label for="fabricante">Fabricante</label>
+      <input type="text" [(ngModel)]="vinho.fabricante" class="form-control" name="fabricante" id="fabricante" maxlength="50" required #fabricante="ngModel">
+      <div [hidden]="fabricante.valid || fabricante.pristine" class="alert alert-danger">
+          Nome do fabricante do vinho é um campo obrigatório
+      </div>  
+    </div>
+    <div class="form-group">
+      <label for="paisOrigem">País de Origem</label>
+      <input type="text" [(ngModel)]="vinho.paisOrigem" class="form-control" name="paisOrigem" id="paisOrigem" maxlength="50" required #paisOrigem="ngModel">
+      <div [hidden]="paisOrigem.valid || paisOrigem.pristine" class="alert alert-danger">
+          Pais de origem do vinho é um campo obrigatório
+      </div>  
+    </div>
+    <div class="form-group" role="group">      
+      <button type="submit" class="btn btn-primary" >Salvar</button>
+      <button type="button" class="btn btn-warning" (click)="voltar()" >Voltar</button>
+    </div>
+  </form>
+</div>
