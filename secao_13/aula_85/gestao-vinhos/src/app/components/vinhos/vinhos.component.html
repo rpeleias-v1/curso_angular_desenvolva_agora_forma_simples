@@ -1,0 +1,35 @@
+<div class="form-group">
+  <label>Buscar vinhos</label>
+  <input type="text" class="form-control" id="campoBusca" name="campoBusca" 
+    maxlength="50" [(ngModel)]="campoBusca" required >
+</div>
+<table class="table table-stripped table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Classificação</th>
+      <th>Uva</th>
+      <th>Fabricante</th>
+      <th>Ano de Safra</th>
+      <th>País de Origem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vinho of vinhos | filtroTabela: campoBusca" (click)="selecionar(vinho)">
+      <td>{{vinho.id}}</td>
+      <td>{{vinho.nome}}</td>
+      <td>{{vinho.classificacao}}</td>
+      <td>{{vinho.uva}}</td>
+      <td>{{vinho.fabricante}}</td>
+      <td>{{vinho.anoSafra}}</td>
+      <td>{{vinho.paisOrigem}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="vinhoSelecionado" class="float-right">  
+  <button class="btn btn-primary" (click)="visualizar()">Visualizar</button>
+  <button class="btn btn-warning" (click)="editar()">Editar</button>
+  <button class="btn btn-danger" (click)="remover()">Remover</button>
+</div>
