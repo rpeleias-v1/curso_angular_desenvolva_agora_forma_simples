@@ -46,14 +46,7 @@ export class CadastroVinhoComponent implements OnInit {
       }
     });
   }
-
-  private carregarVinho(id: number) {
-    this.vinhoService.buscar(id)
-      .then(vinho => {
-        this.vinho = vinho;
-      }).catch(erro => console.log(erro));
-  }
-
+ 
   private carregarVinho(id: number) {
     this.vinhosService.buscar(id)
       .then(vinho => {
@@ -74,7 +67,7 @@ export class CadastroVinhoComponent implements OnInit {
   }
 
   private cadastrarNovo() {
-    this.vinhoService.cadastrar(this.vinho)
+    this.vinhosService.cadastrar(this.vinho)
       .then(response => {
         console.log(JSON.stringify(response));
         alert("Vinho cadastrado com sucesso");
@@ -86,7 +79,7 @@ export class CadastroVinhoComponent implements OnInit {
   }
 
   private atualizar() {
-    this.vinhoService.atualizar(this.vinho.id, this.vinho)
+    this.vinhosService.atualizar(this.vinho.id, this.vinho)
       .then(response => {
         console.log(JSON.stringify(response));
         alert("Vinho atualizado com sucesso");
