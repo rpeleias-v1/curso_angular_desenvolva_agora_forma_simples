@@ -1,0 +1,5 @@
+<div *ngIf="visivel" [ngClass]="['alert', tipoAlerta(), 'alert-position']" role="alert">
+  <div *ngIf="notificacao?.mensagem">
+      {{notificacao?.mensagem}}
+  </div>
+</div>
