@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Visualizar Vinhos</h2>  
+  <div class="form-group">
+    <label for="vinho">Nome</label>
+    <input type="text" class="form-control" id="nome" name="nome" [ngModel]="vinho.nome" readonly>      
+  </div>
+
+  <div class="form-group">
+    <label for="uva">Tipo Uva</label>
+    <input type="text" class="form-control" id="uva" name="uva" [ngModel]="vinho.uva" readonly>            
+  </div>
+  <div class="form-group">
+    <label for="classificacao">Classificação</label>
+    <input type="text" class="form-control" id="classificacao" name="classificacao" [ngModel]="vinho.classificacao" readonly>                  
+  </div>
+  <div class="form-group">
+    <label for="anoSafra">Ano da safra</label>
+    <input type="number" class="form-control" min="1900" max="2017" id="anoSafra" [ngModel]="vinho.anoSafra"
+      readonly>      
+  </div>
+  <div class="form-group">
+    <label for="fabricante">Fabricante</label>
+    <input type="text" class="form-control" id="fabricante" name="fabricante"  [ngModel]="vinho.fabricante" readonly>      
+  </div>    
+  <div class="form-group">
+    <label for="paisOrigem">País de origem</label>
+    <input type="text" class="form-control" id="paisOrigem" name="paisOrigem"  [ngModel]="vinho.paisOrigem" readonly>      
+  </div>
+  <div class="form-group" role="group">      
+    <button type="button" class="btn btn-warning" (click)="retornar($event)" >Voltar</button>
+  </div>
+</div>
