@@ -36,6 +36,22 @@ export class CadastroVinhoComponent implements OnInit {
   private inicializarCamposSelecao() {
     this.uvas = ['Merlot', 'Cabernet Sauvignon', 'Carmenere'];
     this.classificacoes = ['Tinto', 'Branco', 'Verde'];
+    this.titulo = 'Cadastro de Vinho';
+
+    this.activatedRoute.params.forEach((params: Params) => {
+      let id = +params['id'];
+      if(id) {
+        this.titulo = 'Edição de vinhos';
+        this.carregarVinho(id);
+      }
+    });
+  }
+
+  private carregarVinho(id: number) {
+    this.vinhoService.buscar(id)
+      .then(vinho => {
+        this.vinho = vinho;
+      }).catch(erro => console.log(erro));
   }
 
   private carregarVinho(id: number) {
@@ -50,10 +66,30 @@ export class CadastroVinhoComponent implements OnInit {
   }
 
   salvar() {
-    this.vinhosService.cadastrar(this.vinho)
+    if(this.vinho.id) {
+      this.atualizar();      
+    } else {
+      this.cadastrarNovo();
+    }    
+  }
+
+  private cadastrarNovo() {
+    this.vinhoService.cadastrar(this.vinho)
       .then(response => {
         console.log(JSON.stringify(response));
         alert("Vinho cadastrado com sucesso");
+        this.router.navigate(['/vinhos']);
+      })
+      .catch(erro => {
+        console.log(erro);
+      })
+  }
+
+  private atualizar() {
+    this.vinhoService.atualizar(this.vinho.id, this.vinho)
+      .then(response => {
+        console.log(JSON.stringify(response));
+        alert("Vinho atualizado com sucesso");
         this.router.navigate(['/vinhos']);
       })
       .catch(erro => {

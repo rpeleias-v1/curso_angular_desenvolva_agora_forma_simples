@@ -20,7 +20,7 @@
     <div class="form-group">
       <label for="classificacao">Classificação</label>
       <select name="classificacao" id="classificacao" class="form-control" name="classificacao" [(ngModel)]="vinho.classificacao" required>
-          <option *ngFor="let classificacao of classificacoes" [value]="classificacao">
+          <option *ngFor="let classificacao of classificacoes" [value]= "classificacao">
           {{classificacao}}
         </option>
       </select>
