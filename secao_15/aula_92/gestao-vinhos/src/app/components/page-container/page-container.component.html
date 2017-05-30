@@ -1,4 +1,7 @@
 <div class="container">
   <h2>{{titulo}}</h2>
-  <ng-content></ng-content>
+  <ng-content select=".content-area"></ng-content>
+  <div class="form-group" role="group">
+    <ng-content select=".button-area"></ng-content>
+  </div>
 </div>

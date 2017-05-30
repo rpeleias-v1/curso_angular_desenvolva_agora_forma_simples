@@ -1,5 +1,6 @@
 <page-container titulo="Detalhamento de vinhos">
-  <div class="form-group">
+  <div class="content-area">
+    <div class="form-group">
     <label for="vinho">Nome</label>
     <input type="text" class="form-control" id="nome" name="nome" [ngModel]="vinho.nome" readonly>      
   </div>
@@ -24,7 +25,10 @@
     <label for="paisOrigem">País de origem</label>
     <input type="text" class="form-control" id="paisOrigem" name="paisOrigem"  [ngModel]="vinho.paisOrigem" readonly>      
   </div>
-  <div class="form-group" role="group">      
+
+  </div>
+  
+  <div class="button-area">      
     <button type="button" class="btn btn-warning" (click)="voltar()" >Voltar</button>
   </div>
 </page-container>

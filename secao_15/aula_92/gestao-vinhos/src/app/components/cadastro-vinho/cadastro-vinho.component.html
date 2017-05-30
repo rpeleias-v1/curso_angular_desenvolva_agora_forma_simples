@@ -1,5 +1,6 @@
 <page-container [titulo]="titulo">
-  <form (ngSubmit)="salvar()">
+  <div class="content-area">
+  <form (ngSubmit)="salvar()" id="formCadastroVinho">
     <div class="form-group">
       <label for="vinho">Nome</label>
       <input type="text" [(ngModel)]="vinho.nome" class="form-control" id="nome" name="vinho" maxlength="50" required #nome="ngModel" >  
@@ -43,10 +44,11 @@
       <div [hidden]="paisOrigem.valid || paisOrigem.pristine" class="alert alert-danger">
           Pais de origem do vinho é um campo obrigatório
       </div>  
-    </div>
-    <div class="form-group" role="group">      
-      <button type="submit" class="btn btn-primary" >Salvar</button>
-      <button type="button" class="btn btn-warning" (click)="voltar()" >Voltar</button>
-    </div>
+    </div>    
   </form>
+  </div>
+  <div class="button-area" >      
+    <button type="submit" class="btn btn-primary" form="formCadastroVinho" >Salvar</button>
+    <button type="button" class="btn btn-warning" (click)="voltar()" >Voltar</button>
+  </div>
 </page-container>
