@@ -1,4 +1,4 @@
-<page-container [titulo]="titulo" (acaoVoltar)="voltar()">
+<page-container [titulo]="titulo">
   <div class="content-area">
   <form (ngSubmit)="salvar()" id="formCadastroVinho">
     <div class="form-group">
@@ -48,6 +48,7 @@
   </form>
   </div>
   <div class="button-area" >      
-    <button type="submit" class="btn btn-primary" form="formCadastroVinho" >Salvar</button>    
+    <button type="submit" class="btn btn-primary" form="formCadastroVinho" >Salvar</button>
+    <button type="button" class="btn btn-warning" (click)="voltar()" >Voltar</button>
   </div>
 </page-container>

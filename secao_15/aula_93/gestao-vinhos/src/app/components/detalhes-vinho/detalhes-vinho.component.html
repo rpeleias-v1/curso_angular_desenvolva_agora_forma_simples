@@ -1,4 +1,4 @@
-<page-container titulo="Detalhamento de vinhos" (acaoVoltar)="voltar()">
+<page-container titulo="Detalhamento de vinhos">
   <div class="content-area">
     <div class="form-group">
     <label for="vinho">Nome</label>
@@ -26,5 +26,9 @@
     <input type="text" class="form-control" id="paisOrigem" name="paisOrigem"  [ngModel]="vinho.paisOrigem" readonly>      
   </div>
 
-  </div> 
+  </div>
+  
+  <div class="button-area">      
+    <button type="button" class="btn btn-warning" (click)="voltar()" >Voltar</button>
+  </div>
 </page-container>
