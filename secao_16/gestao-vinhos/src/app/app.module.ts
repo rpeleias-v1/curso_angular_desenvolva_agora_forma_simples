@@ -24,6 +24,7 @@ import { PageContainerComponent } from './components/page-container/page-contain
 import { VinhoContainerComponent } from './components/vinho-container/vinho-container.component';
 
 import { fakeBackend } from './fake-backend/fake-backend';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { fakeBackend } from './fake-backend/fake-backend';
     FiltroTabelaPipe,
     DestacarEstiloDirective,
     PageContainerComponent,
-    VinhoContainerComponent,           
+    VinhoContainerComponent,
+    LoginComponent,           
   ],
   imports: [
     BrowserModule,

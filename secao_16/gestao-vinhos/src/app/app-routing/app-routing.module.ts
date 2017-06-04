@@ -6,6 +6,7 @@ import {Routes, RouterModule} from '@angular/router';
 import { VinhosComponent } from '../components/vinhos/vinhos.component';
 import { CadastroVinhoComponent } from '../components/cadastro-vinho/cadastro-vinho.component';
 import { DetalhesVinhoComponent} from '../components/detalhes-vinho/detalhes-vinho.component';
+import { LoginComponent} from '../components/login/login.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,11 @@ const routes: Routes = [
   {
     path: 'detalhes-vinho/:id',
     component: DetalhesVinhoComponent
-  }  
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
 ]
 
 @NgModule({

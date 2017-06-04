@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>{{titulo}}</h2>
+  <ng-content select=".content-area"></ng-content>
+  <div class="form-group" role="group">
+    <ng-content select=".button-area"></ng-content>
+    <button type="button" class="btn btn-warning" (click)="voltar()" >Voltar</button>
+  </div>
+</div>
