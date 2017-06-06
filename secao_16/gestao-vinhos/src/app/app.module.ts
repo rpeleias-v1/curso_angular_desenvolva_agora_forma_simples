@@ -26,6 +26,7 @@ import { VinhoContainerComponent } from './components/vinho-container/vinho-cont
 
 import { fakeBackend } from './fake-backend/fake-backend';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { LoginComponent } from './components/login/login.component';
     MockBackend,
     BaseRequestOptions,
     {provide: Http, useFactory: fakeBackend, deps: [MockBackend, BaseRequestOptions]},
-    AutenticacaoService],    
+    AutenticacaoService,
+    AuthGuard],    
   bootstrap: [AppComponent]
 })
 export class AppModule { }
