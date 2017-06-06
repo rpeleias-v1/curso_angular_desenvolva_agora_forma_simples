@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { AutenticacaoService } from './services/autenticacao.service'; 
+import { AutenticacaoService } from './services/autenticacao.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +9,7 @@ import { AutenticacaoService } from './services/autenticacao.service';
 })
 export class AppComponent {
 
-  constructor(private autenticacaoService: AutenticacaoService) {    
-  }
+  constructor(private autenticacaoService: AutenticacaoService) {}
 
   dataHoje = new Date();
   nome: string = 'Rodrigo Peleias';

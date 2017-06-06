@@ -2,9 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MockBackend, MockConnection } from '@angular/http/testing';
-import { Http, BaseRequestOptions } from '@angular/http';
+import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
+import { MockBackend } from '@angular/http/testing';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
@@ -12,7 +11,6 @@ import { AppComponent } from './app.component';
 import { VinhosComponent } from './components/vinhos/vinhos.component';
 import { VinhosService } from './services/vinhos.service';
 import { NotificacaoService } from './services/notificacao.service';
-import { AutenticacaoService } from './services/autenticacao.service';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { VinhoApi } from './vinho-api';
@@ -38,14 +36,13 @@ import { LoginComponent } from './components/login/login.component';
     DestacarEstiloDirective,
     PageContainerComponent,
     VinhoContainerComponent,
-    LoginComponent,           
+    LoginComponent    
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpModule  ,
-    InMemoryWebApiModule.forRoot(VinhoApi),
     InMemoryWebApiModule.forRoot(VinhoApi),
     AppRoutingModule 
   ],
@@ -54,8 +51,8 @@ import { LoginComponent } from './components/login/login.component';
     NotificacaoService,
     MockBackend,
     BaseRequestOptions,
-    {provide: Http, useFactory: fakeBackend, deps: [MockBackend, BaseRequestOptions]},
-    AutenticacaoService],    
+    {provide: Http, useFactory: fakeBackend, deps: [MockBackend, BaseRequestOptions]}
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
