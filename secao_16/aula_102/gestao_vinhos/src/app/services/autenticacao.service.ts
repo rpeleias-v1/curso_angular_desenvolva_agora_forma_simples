@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Usuario } from '../models/usuario';
 
 import { Http, Response } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/toPromise'
 
 @Injectable()
 export class AutenticacaoService {
 
-  private _usuarioLogado: boolean;
+  private _usuarioLogado:boolean = false;
   private token: string;
 
   constructor(private http: Http) { }
