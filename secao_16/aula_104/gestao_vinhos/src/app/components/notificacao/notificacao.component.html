@@ -1,0 +1,5 @@
+<div *ngIf="notificacao">
+  <div [@visibilidade]='visibilidade' [ngClass]="['alert', tipoAlerta()]">
+    {{notificacao.mensagem}}
+  </div>
+</div>
