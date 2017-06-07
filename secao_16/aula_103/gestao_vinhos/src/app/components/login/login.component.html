@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <form name="form" class="form-signin" (ngSubmit)="f.form.valid && logar()" #f="ngForm" novalidate>
+   
+    <h2 class="form-signin-heading" style="text-align: center;">Gestão de Vinhos. Seja bem vindo!</h2>
+    
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !login.valid}">
+        <label for="login" class="sr-only">Login:</label>
+        <input type="text" class="form-control" name="login"
+          placeholder="Digite o login" required [(ngModel)]="usuarioLogin.login" #login="ngModel">
+        <div *ngIf="f.submitted && !login.valid" class="help-block">
+          Login do usuário é um campo obrigatório
+        </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !senha.valid}">
+        <label for="senha" class="sr-only">Login:</label>
+        <input type="password" id="senha" class="form-control" name="senha"
+          placeholder="Digite a senha" required [(ngModel)]="usuarioLogin.senha" #senha="ngModel">
+        <div *ngIf="f.submitted && !senha.valid" class="help-block">
+          Senha do usuário é um campo obrigatório
+        </div>
+    </div> 
+    
+  
+    <div class="form-group">
+      <button [disabled]="carregando" class="btn btn-lg btn-primary btn-block" >Sign in</button>
+      <img *ngIf="carregando" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    </div>
+    <div *ngIf="erro" class="alert alert-danger">{{erro}}</div>
+
+  </form>
+
+</div>

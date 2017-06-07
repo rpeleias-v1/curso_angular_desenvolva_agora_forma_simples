@@ -34,5 +34,12 @@ export class AutenticacaoService {
   get usuarioLogado(): boolean {
     return localStorage.getItem('usuarioSistema') !== null;
   }
-  
+
+  get nomeUsuarioLogado(): string {
+    if (localStorage.getItem('usuarioSistema') !== null) {
+      return JSON.parse(localStorage.getItem('usuarioSistema')).nome;
+    } else {
+      return 'Usuário não autenticado no sistema';
+    }
+  }
 }

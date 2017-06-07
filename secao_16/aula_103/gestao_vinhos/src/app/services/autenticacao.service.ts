@@ -26,13 +26,10 @@ export class AutenticacaoService {
       });    
   }
 
-  logout(): void {
-    this.token = null;
-    localStorage.removeItem('usuarioSistema');
-  }
-
   get usuarioLogado(): boolean {
     return localStorage.getItem('usuarioSistema') !== null;
   }
   
+  
+
 }
