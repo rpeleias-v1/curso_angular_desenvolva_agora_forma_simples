@@ -8,7 +8,7 @@ class Veiculo {
         console.log(`Acelerando o veículo...`);
     }
 
-    protected trocarMarcha(): void {
+    trocarMarcha(): void {
         console.log( 'Troca de marcha!!');
     }
 

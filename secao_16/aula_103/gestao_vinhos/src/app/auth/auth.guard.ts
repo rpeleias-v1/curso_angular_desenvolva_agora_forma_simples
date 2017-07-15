@@ -9,7 +9,7 @@ export class AuthGuard implements CanActivate {
 
   constructor(private router: Router, private autenticacaoService: AutenticacaoService) { }
   
-  canActivate(next: ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+  canActivate(next: ActivatedRouteSnapshot,state: RouterStateSnapshot) {
     if (this.autenticacaoService.usuarioLogado) {
       return true;
     } else {
